@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Umbrella corp sandbox</title>
+</head>
+<body style="background: #2c2b2b">
+<script>
+
+    let zeroPatient = {
+        "name": "Vetal",
+        "blood": 2,
+        "infected": true,
+    };
+
+    let zombieWalker = {};
+
+    //1
+    function bite(obj) {
+        let {name, blood, infected} = zeroPatient;
+        obj.name = name;
+        obj.blood = blood;
+        obj.infected = infected;
+    }
+
+    //2
+    let zombieBeaver = JSON.parse(JSON.stringify(zeroPatient));
+
+    //3
+    function mutate(object) {
+        let patient = {};
+        for (let prop in object) {
+            if (object.hasOwnProperty(prop)) {
+                patient[prop] = mutate[object];
+            }
+        }
+        return patient;
+    }
+
+    //4
+    function infect(obj) {
+        let target = {};
+        for (let prop in obj) {
+            if (typeof obj[prop] !== 'object' || obj[prop] === null) {
+                target[prop] = obj[prop];
+            }
+            else {
+                target[prop] = infect(obj[prop]);
+            }
+        }
+        return target;
+    }
+
+    let zombieSquirrel = mutate(zeroPatient);
+    bite(zombieWalker);
+    let zombie = infect(zeroPatient);
+
+    console.log(zeroPatient);
+    console.log(zombieSquirrel);
+    console.log(zombieWalker);
+    console.log(zombieBeaver);
+    console.log(zombie);
+
+</script>
+</body>
+</html>

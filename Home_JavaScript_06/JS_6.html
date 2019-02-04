@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+<body style="background: #333333">
+<script>
+    // "use strict";
+    // Конструктор Виталика
+    let Person = function () {
+        // this.firstName = prompt("enter your first name");
+        // this.secondName = prompt("enter your second");
+        this.login = function getLogin() {
+            let newLogin = this.firstName[0].toLowerCase() + this.secondName.toLowerCase();
+            return newLogin;
+        };
+        this.setFirstName = function (newFirstName) {
+            this.firstName = newFirstName;
+        };
+        this.setLastName = function (newLastName) {
+            this.secondName = newLastName;
+        };
+
+
+        Object.defineProperty(this, 'firstName', {
+            value: prompt("enter your name"),
+            writable: false,
+            configurable: true,
+            enumerable: true
+        });
+        Object.defineProperty(this, 'secondName', {
+            value: prompt("enter you surname"),
+            writable: false,
+            configurable: true,
+            enumerable: true
+        });
+    };
+
+    let Vetal = new Person();
+    console.log(`Hello, ${Vetal.firstName} ${Vetal.secondName}, your login is: ${Vetal.login()}`);
+    console.log(Vetal);
+
+    Vetal.setFirstName("foxy");
+    Vetal.setLastName("zombie_zombie_Vetal");
+    console.log(Vetal);
+
+    Vetal.firstName = "ne Vetal";
+    Vetal.secondName = "ne Konev";
+    console.log(Vetal);
+
+    //Конструктор лисички
+
+    //     let fox = function () {
+    //
+    //      Object.defineProperty(fox, 'firstName', {
+    //             value: "Лиса",//prompt("enter your name"),
+    //             writable: true,
+    //             configurable: true,
+    //             enumerable: true
+    //         });
+    //
+    //     Object.defineProperty(fox, 'secondName', {
+    //             value: "Алиса",//prompt("enter you surname"),
+    //             writable: true,
+    //             configurable: true,
+    //             enumerable: true
+    //         });
+    //     };
+    //
+    // let foxy = new fox("Лис", "Лисичкин");
+    //     console.log(foxy);
+
+</script>
+</body>
+</html>
+

@@ -1,0 +1,44 @@
+* {
+    margin: 0 auto;
+}
+
+.main-box {
+    width: 600px;
+    margin: 100px auto;
+    border: 5px solid rgb(255, 126, 20);
+    font-family: Montserrat, sans-serif;
+    background: #FFAA40;
+    color: #A65C00;
+    text-align: center;
+    overflow: hidden;
+    }
+
+.res {
+    font-size: 40px;
+}
+
+#result {
+    display: block;
+    font-size: 30px;
+    background: rgb(255, 208, 0);
+    color: rgb(114, 79, 5);
+}
+
+p {
+    padding-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.btn:hover {
+    opacity: 0.7;
+}
+
+li {
+    list-style: none;
+}
+
+.content {
+    margin-top: 20px;
+}
